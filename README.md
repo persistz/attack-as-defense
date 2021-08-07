@@ -48,8 +48,9 @@ User can use the scripts `bash attack_iter_generate.sh` to generate adversarial 
  
 ### 2. Attack benign samples 
 
-CUDA_VISIBLE_DEVICES=XX python attack_iter_generate.py -a BIM -i benign
- 
+`CUDA_VISIBLE_DEVICES=XX python attack_iter_generate.py -a BIM -i benign
+`
+
 User can use the scripts `bash attack_iter_generate.sh` to generate adversarial and benign samples attack costs automatically.
 
 ### 3. Get the AUROC results
@@ -60,5 +61,15 @@ where `<-a>` defines the attack methods used for defense.
 
 ### 4. Detect
 
-We will release this part of code in this week.
-The code will contain two detection methods, k-nn based detector and z-score based detector.
+The code contains two detection methods, k-nn based detector and z-score based detector.
+
+`CUDA_VISIBLE_DEVICES=XX python attack_as_defense_detector.py -d knn -a BIM --init
+`
+
+`CUDA_VISIBLE_DEVICES=XX python attack_as_defense_detector.py -d zscore -a BIM
+`
+
+For the first time to execute it, please add the `--init` parameter, 
+which generates the training set for the detection.
+
+
