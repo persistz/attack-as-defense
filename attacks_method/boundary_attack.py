@@ -233,7 +233,7 @@ class BoundaryAttack(Attack):
 
         # get bounds
         bounds = a.bounds()
-        min_, max_ = bounds
+        # min_, max_ = bounds, never used
 
         # get original and starting point in the right format
         original = a.original_image.astype(self.internal_dtype)
@@ -518,8 +518,6 @@ class BoundaryAttack(Attack):
                     _, batch_is_adversarial = a.batch_predictions(
                         candidates.astype(external_dtype),
                         strict=False)
-                    t = time.time() - t
-                    # TODO: use t
 
                     assert batch_is_adversarial.shape == (len(indices),)
 
@@ -624,7 +622,7 @@ class BoundaryAttack(Attack):
         if threaded_rnd:
             for rnd_normal_thread in rnd_normal_threads:
                 rnd_normal_thread.do_run = False
-            for rnd_normal_thread in rnd_normal_threads:
+            for _ in rnd_normal_threads:
                 try:
                     rnd_normal_queue.get(block=False)
                 except queue.Empty:  # pragma: no cover

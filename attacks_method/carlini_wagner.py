@@ -170,12 +170,12 @@ class CarliniWagnerL2Attack(Attack):
                 if is_adv:
                     # this binary search step can be considered a success
                     # but optimization continues to minimize perturbation size
-                    found_adv = True
 
+                    # * updated by attack as defense
                     # * if adv then return and record the iter times
                     gl_var.return_iter_cw = iteration
                     return
-
+                    
                 if abort_early and \
                         iteration % (np.ceil(max_iterations / 10)) == 0:
                     # after each tenth of the iterations, check progress
@@ -183,10 +183,7 @@ class CarliniWagnerL2Attack(Attack):
                         break  # stop Adam if there has not been progress
                     loss_at_previous_check = loss
 
-            if found_adv:
-                logging.info('found adversarial with const = {}'.format(const))
-                upper_bound = const
-            else:
+            if not found_adv:
                 logging.info('failed to find adversarial '
                              'with const = {}'.format(const))
                 lower_bound = const

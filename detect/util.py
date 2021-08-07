@@ -248,7 +248,7 @@ def get_mc_predictions(model, X, nb_iter=50, batch_size=256):
         return output
 
     preds_mc = []
-    for i in tqdm(range(nb_iter)):
+    for _ in tqdm(range(nb_iter)):
         preds_mc.append(predict())
 
     return np.asarray(preds_mc)
