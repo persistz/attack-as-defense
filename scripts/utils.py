@@ -124,7 +124,7 @@ def get_single_detector_train_data(root_path, train_benign_path, train_adv_paths
         try:
             train_benign_lines_list.append(int(line))
         except:
-            raise('Invalid data type in training data:', line)
+            raise('Invalid data type in training data:', str(line))
     assert len(train_benign_lines_list) == 1000
 
     # load adv training txt file

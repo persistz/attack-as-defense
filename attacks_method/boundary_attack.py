@@ -482,11 +482,9 @@ class BoundaryAttack(Attack):
 
                 # check spherical ones
                 if do_spherical:
-                    t = time.time()
                     _, batch_is_adversarial = a.batch_predictions(
                         spherical_candidates.astype(external_dtype),
                         strict=False)
-                    t = time.time() - t
 
                     assert batch_is_adversarial.shape == (current_batch_size,)
 
@@ -514,7 +512,6 @@ class BoundaryAttack(Attack):
                     reduced_shape = (len(indices),) + batch_shape[1:]
                     assert candidates.shape == reduced_shape
 
-                    t = time.time()
                     _, batch_is_adversarial = a.batch_predictions(
                         candidates.astype(external_dtype),
                         strict=False)

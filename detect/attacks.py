@@ -5,7 +5,7 @@ import numpy as np
 import tensorflow as tf
 from tqdm import tqdm
 from cleverhans.utils import other_classes
-from cleverhans.utils_tf import batch_eval, model_argmax
+from cleverhans.utils_tf import batch_eval
 from cleverhans.attacks import SaliencyMapMethod
 
 

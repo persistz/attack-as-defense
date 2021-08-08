@@ -28,17 +28,17 @@ class IterativeProjectedGradientBaseAttack(Attack):
     see https://github.com/MadryLab/mnist_challenge/blob/master/pgd_attack.py
     """
 
-    @abstractmethod
-    def _gradient(self, a, x, class_, strict=True):
-        raise NotImplementedError
+    # @abstractmethod
+    # def _gradient(self, a, x, class_, strict=True):
+    #     raise NotImplementedError
 
-    @abstractmethod
-    def _clip_perturbation(self, a, noise, epsilon):
-        raise NotImplementedError
+    # @abstractmethod
+    # def _clip_perturbation(self, a, noise, epsilon):
+    #     raise NotImplementedError
 
-    @abstractmethod
-    def _check_distance(self, a):
-        raise NotImplementedError
+    # @abstractmethod
+    # def _check_distance(self, a):
+    #     raise NotImplementedError
 
     def _get_mode_and_class(self, a):
         # determine if the attack is targeted or not
