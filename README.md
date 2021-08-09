@@ -2,7 +2,7 @@
 
 This repository contains the code for the ISSTA'21 paper [Attack as Defense: Characterizing Adversarial Examples using Robustness](https://dl.acm.org/doi/10.1145/3460319.3464822).
 
-  
+[![Language grade: Python](https://img.shields.io/lgtm/grade/python/g/persistz/attack-as-defense.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/persistz/attack-as-defense/context:python)
 
 ## Requirements & Setup
 
