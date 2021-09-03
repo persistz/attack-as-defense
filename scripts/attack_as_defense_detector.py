@@ -46,7 +46,7 @@ def generate_training_data(model, dataset):
     # we prefer to use fgsm，bim，jsma and c&w
     # but due to the high time overhead of c&w(as binary search
     # we use deepfool attack to replace it here
-    # in order to be able to efficiently reproduce our method
+    # in order to reproduce our method efficiently
     adv_types_list = ['fgsm', 'bim', 'jsma', 'df']
 
     adversarial_result = []
