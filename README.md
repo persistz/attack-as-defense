@@ -37,7 +37,7 @@ We provide a natural trained model in the data folder so user do not need to tra
 
 ### 1. Attack adversarial examples
 
-CUDA_VISIBLE_DEVICES=XX python attack_iter_generate.py -a BIM -i fgsm
+`CUDA_VISIBLE_DEVICES=XX python attack_iter_generate.py -a BIM -i fgsm`
 
 where `<-a>` defines the attack methods used for defense,
 and `<i>` defines the input data.
@@ -48,14 +48,13 @@ User can use the scripts `bash attack_iter_generate.sh` to generate adversarial 
  
 ### 2. Attack benign samples 
 
-`CUDA_VISIBLE_DEVICES=XX python attack_iter_generate.py -a BIM -i benign
-`
+`CUDA_VISIBLE_DEVICES=XX python attack_iter_generate.py -a BIM -i benign`
 
 User can use the scripts `bash attack_iter_generate.sh` to generate adversarial and benign samples attack costs automatically.
 
 ### 3. Get the AUROC results
 
-python calc_auc.py -a BIM
+`python calc_auc.py -a BIM`
 
 where `<-a>` defines the attack methods used for defense.
 

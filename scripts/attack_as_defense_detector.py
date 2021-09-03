@@ -209,7 +209,7 @@ def main(args):
             thrs_min = arr_mean - z_score_thrs * arr_std
             thrs_min = inv_boxcox(thrs_min, lmd)
         else:
-            print('raw attack cost dist pass the ormal test')
+            print('raw attack cost dist pass the normal test')
             thrs_min = arr_mean - z_score_thrs * arr_std
 
         # * test z-score detector
