@@ -4,8 +4,6 @@ import numpy as np
 import foolbox
 import os
 import argparse
-
-from keras.layers import Input
 from keras.models import load_model
 
 from detect.util import get_data
@@ -179,7 +177,7 @@ def main(args):
                 try:
                     test_lines_list.append(int(line))
                 except:
-                    raise('Invalid data type in test data:', line)
+                    raise Exception('Invalid data type in test data:', line)
             assert len(test_lines_list) == 1000
 
             test_lines_list = np.expand_dims(test_lines_list, axis=1)
@@ -223,7 +221,7 @@ def main(args):
                 try:
                     test_lines_list.append(int(line))
                 except:
-                    raise('Invalid data type in test data:', line)
+                    raise Exception('Invalid data type in test data:', line)
             assert len(test_lines_list) == 1000
 
             result = [1 if _ < thrs_min else 0 for _ in test_lines_list] # for ensemble detector, need np.intersect1d and np.union1d
